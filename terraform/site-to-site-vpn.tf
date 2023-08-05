@@ -115,6 +115,26 @@ resource "aws_security_group" "nsg" {
     security_groups  = []
     self             = true
     to_port          = 0
+    }, {
+    cidr_blocks = ["192.168.0.0/24"]
+    description      = ""
+    from_port        = 3000
+    ipv6_cidr_blocks = []
+    prefix_list_ids  = []
+    protocol         = "tcp"
+    security_groups  = []
+    self             = false
+    to_port          = 3000
+    } ,{
+    cidr_blocks = ["192.168.0.0/24"]
+    from_port        = 8086
+    description      = ""
+    ipv6_cidr_blocks = []
+    prefix_list_ids  = []
+    protocol         = "tcp"
+    security_groups  = []
+    self             = false
+    to_port          = 8086
   }]
   name                   = "default"
   name_prefix            = null
